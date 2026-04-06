@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import styles from './Body.module.css';
 
 interface BodyProps {
     title?: string;
-    description?: string;
-    subDescription?: string;
+    description?: ReactNode;
+    subDescription?: ReactNode;
     linkLabel?: string;
     linkUrl?: string;
     imageSrc: string;
@@ -22,12 +22,22 @@ const Body: React.FC<BodyProps> = ({
         <section className={styles.guidanceSection}>
             <div className={styles.container}>
 
+                { }
                 <div className={styles.content}>
                     <h2 className={styles.title}>{title}</h2>
 
                     <div className={styles.textWrapper}>
-                        {description && <p className={styles.description}>{description}</p>}
-                        {subDescription && <p className={styles.subDescription}>{subDescription}</p>}
+                        { }
+                        {description && (
+                            <div className={styles.description}>
+                                {description}
+                            </div>
+                        )}
+                        {subDescription && (
+                            <div className={styles.subDescription}>
+                                {subDescription}
+                            </div>
+                        )}
                     </div>
 
                     {linkLabel && linkUrl && (
@@ -42,7 +52,7 @@ const Body: React.FC<BodyProps> = ({
                     )}
                 </div>
 
-                {/* الجزء الأيمن: العرض المرئي (Mockup) */}
+                { }
                 <div className={styles.showcase}>
                     <div className={styles.mockupFrame}>
                         <img
